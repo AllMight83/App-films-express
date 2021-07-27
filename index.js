@@ -1,6 +1,8 @@
-const app = express();
+const express =  require('express');
 const port = 3000
+const router = require('./routes/allowedrouts')
 
+const app = express()
 // Motor de vistar
 //app.set('view engine', 'pug');
 //app.set('views','./views');
@@ -8,8 +10,8 @@ const port = 3000
 
 app.use(express.json());
 
-app.use('/',pages); //Para las vistas de las web: devuelve vista
-app.use('/api',products); // Para la Api: devuelve objeto; products es el router;
+
+app.use('/api',router); // Para la Api: devuelve objeto; products es el router;
 
 
 //app.use('/otracosa',pages)
