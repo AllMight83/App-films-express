@@ -1,17 +1,15 @@
 //API Fetch
 
 const fetch = require('node-fetch')
+const API_KEY = '80be4bc9';
+
 
 const product = {
-    getAllProducts: async () => {
-        const res = await fetch('https://fakestoreapi.com/products')
+ 
+    getFilm: async (title) => {
+        const res = await fetch(`http://www.omdbapi.com/?t=${title}&apikey=${API_KEY}`)
         const data = await res.json()
         return data
-    },
-    getProductsById: async (id) => {
-        const res = await fetch('https://fakestoreapi.com/products/'+id)
-        const data = await res.json()
-        return [data]
     },
     addProduct: async (product) => {
         const res = await fetch('https://fakestoreapi.com/products',{
@@ -23,5 +21,10 @@ const product = {
         })
         const data = await res.json()
         return data
-    }
+    },
+
+
 }
+module.exports = product
+
+
