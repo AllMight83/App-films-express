@@ -1,12 +1,12 @@
 //Controllers
-const product = require('../utils/product')
+const product = require('../utils/apifetch')
 
 const pages = {
-    home:(req, res) => {
-        let msj = "Esta es la home desde un mensaje"
-        let title = "HOME"
+    returnjson: async(req, res) => {
+        let movie = req.params.title
+        let info = await product.getFilm(movie)
         //template de views mas los parametros
-        res.status(200).render("template",{msj,title})
+        res.status(200).json(info)
     },
     about:(req, res) => {
         let msj = "Esta es la about desde PUG"
