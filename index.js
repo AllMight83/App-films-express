@@ -1,12 +1,9 @@
 const app = express();
 const port = 3000
 
-
-
-
 // Motor de vistar
-app.set('view engine', 'pug');
-app.set('views','./views');
+//app.set('view engine', 'pug');
+//app.set('views','./views');
 
 
 app.use(express.json());
