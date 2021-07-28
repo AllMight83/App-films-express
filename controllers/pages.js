@@ -8,10 +8,17 @@ const pages = {
         //template de views mas los parametros
         res.status(200).json(info)
     },
-    about:(req, res) => {
-        let msj = "Esta es la about desde PUG"
-        let title = "About"
-        res.status(200).render("template",{msj,title})
+    newFilm:async (req, res) => {
+        console.log("Se ha realizado el POST satisfactoriamente");
+        res.status(200).send(req.body)
+    },
+    modifyFilm:(req, res) => {
+        console.log("Se ha realizado el PUT");
+        res.status(200).send(req.body)
+    },
+    deleteFilm:(req, res) => {
+        console.log(req.query)
+        res.status(200).send(req.body)
     },
 }
 
