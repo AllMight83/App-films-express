@@ -1,6 +1,11 @@
 const express =  require('express');
 const port = 3000
 const router = require('./routes/allowedrouts')
+
+require('dotenv').config();
+
+
+
 const app = express()
 // Motor de vistar
 //app.set('view engine', 'pug');

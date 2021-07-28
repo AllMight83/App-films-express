@@ -1,7 +1,7 @@
 //API Fetch
 
 const fetch = require('node-fetch')
-const API_KEY = '80be4bc9';
+const API_KEY = process.env.API_KEY;
 
 
 const product = {
